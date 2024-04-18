@@ -1,6 +1,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   init = function()
     vim.g.lualine_laststatus = vim.o.laststatus
     if vim.fn.argc(-1) > 0 then
@@ -17,9 +18,9 @@ return {
       function()
         local status = require("ollama").status()
         if status == "IDLE" then
-          return "󱙺 " -- nf-md-robot-outline
+          return "󱙺" -- nf-md-robot-outline
         elseif status == "WORKING" then
-          return "󰚩 " -- nf-md-robot
+          return "󰚩" -- nf-md-robot
         end
       end,
       cond = function()

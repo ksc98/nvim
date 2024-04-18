@@ -8,6 +8,8 @@ keymap.set("n", "<BS>", "<cmd>Noice dismiss<CR>")
 
 keymap.set("n", ";", ":")
 
+keymap.set("v", "p", "P")
+
 keymap.set("n", "ss", "<cmd>split<CR>", opts)
 keymap.set("n", "sv", "<cmd>vsplit<CR>", opts)
 
@@ -22,3 +24,11 @@ keymap.del("i", "<A-j>")
 
 keymap.del("n", "<A-k>")
 keymap.del("i", "<A-k>")
+
+keymap.set("n", "<leader>t", "<cmd>NvimTreeFindFile<CR>")
+keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
+
+keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>")
+keymap.set("n", "<leader>fs", require("auto-session.session-lens").search_session, {
+  noremap = true,
+})

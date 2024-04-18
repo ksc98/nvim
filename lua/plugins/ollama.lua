@@ -27,8 +27,8 @@ return {
 
   ---@type Ollama.Config
   opts = {
-    model = "deepseek-coder:6.7b",
     model = "deepseek-coder:33b",
+    model = "deepseek-coder:6.7b",
     -- your configuration overrides
   },
 }

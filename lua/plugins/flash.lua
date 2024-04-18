@@ -5,13 +5,29 @@ return {
   ---@type Flash.Config
   opts = {
     highlight = {
-      backdrop = true,
+      backdrop = false,
       matches = true,
       priority = 5000,
+      -- groups = {
+      --   label = "@constructor", -- :hi for f/F
+      --   match = "@constructor", -- :hi for t/T
+      -- },
       groups = {
-        label = "@constructor", -- :hi for f/F
-        match = "@constructor", -- :hi for t/T
+        match = "FlashMatch",
+        current = "FlashCurrent",
+        backdrop = "FlashBackdrop",
+        label = "FlashLabel",
       },
+    },
+    label = {
+      rainbow = {
+        enabled = true,
+        -- number between 1 and 9
+        shade = 9,
+      },
+    },
+    prompt = {
+      enabled = true,
     },
   },
   -- stylua: ignore
@@ -32,29 +48,21 @@ return {
       end,
       desc = "Flash Treesitter",
     },
-    -- {
-    --   "r",
-    --   mode = "o",
-    --   function()
-    --     require("flash").remote()
-    --   end,
-    --   desc = "Remote Flash",
-    -- },
-    -- {
-    --   "R",
-    --   mode = { "o", "x" },
-    --   function()
-    --     require("flash").treesitter_search()
-    --   end,
-    --   desc = "Treesitter Search",
-    -- },
     {
-      "<c-s>",
-      mode = { "c" },
+      "r",
+      mode = "o",
       function()
-        require("flash").toggle()
+        require("flash").remote()
       end,
-      desc = "Toggle Flash Search",
+      desc = "Remote Flash",
+    },
+    {
+      "R",
+      mode = { "o", "x" },
+      function()
+        require("flash").treesitter_search()
+      end,
+      desc = "Treesitter Search",
     },
   },
 }

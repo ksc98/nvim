@@ -15,6 +15,7 @@ require("lazy").setup({
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.lang.rust" },
+    { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.terraform" },
@@ -42,6 +43,7 @@ require("lazy").setup({
     cache = {
       enabled = true,
       -- disable_events = {},
+      reset_packpath = true,
     },
     rtp = {
       -- disable some rtp plugins
@@ -50,9 +52,9 @@ require("lazy").setup({
         -- "matchit",
         -- "matchparen",
         "netrwPlugin",
-        "rplugin",
+        -- "rplugin",
         "tarPlugin",
-        "tohtml",
+        -- "tohtml",
         "tutor",
         "zipPlugin",
       },

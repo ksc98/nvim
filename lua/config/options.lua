@@ -10,4 +10,4 @@ vim.opt.laststatus = 3
 --
 -- vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ff0000" })
 
-vim.opt.scrolloff = 18
+vim.opt.scrolloff = 11

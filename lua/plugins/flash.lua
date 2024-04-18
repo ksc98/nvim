@@ -5,7 +5,7 @@ return {
   ---@type Flash.Config
   opts = {
     highlight = {
-      backdrop = false,
+      backdrop = true,
       matches = true,
       priority = 5000,
       -- groups = {

@@ -5,9 +5,9 @@ return {
 
     auto_session.setup({
       post_restore_cmds = { "NvimTreeToggle", "NvimTreeRefresh", "wincmd l" },
-      -- auto_restore_enabled = true,
+      auto_restore_enabled = true,
       auto_save_enabled = true,
-      -- auto_session_enable_last_session = true,
+      auto_session_enable_last_session = true,
 
       log_level = "error",
       auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },

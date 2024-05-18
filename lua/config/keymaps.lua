@@ -32,3 +32,7 @@ keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>")
 keymap.set("n", "<leader>fs", require("auto-session.session-lens").search_session, {
   noremap = true,
 })
+
+keymap.set("n", "<leader>h", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)

@@ -7,6 +7,7 @@ return {
       "hrsh7th/cmp-path",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
+      "garymjr/nvim-snippets",
       "rafamadriz/friendly-snippets",
       "onsails/lspkind.nvim",
     },

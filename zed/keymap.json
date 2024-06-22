@@ -1,0 +1,102 @@
+[
+  {
+    "bindings": {
+      "cmd-e": "project_panel::ToggleFocus",
+      "ctrl-f": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode != insert)",
+    "bindings": {
+      ";": "command_palette::Toggle"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == visual)",
+    "bindings": {
+      "g c": "editor::ToggleComments",
+      "shift-h": "pane::ActivateNextItem",
+      "shift-l": "pane::ActivatePrevItem",
+      "s": null
+    }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "enter": "editor::OpenExcerpts",
+      "cmd-enter": "editor::OpenExcerpts"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal)",
+    "bindings": {
+      "ctrl-h": null,
+      "ctrl-l": null,
+      "ctrl-j": null,
+      "ctrl-k": null,
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem",
+      "space space": "editor::Hover",
+      "g t": "editor::GoToTypeDefinition",
+      "g r": "editor::FindAllReferences",
+      "space r": "editor::ConfirmRename",
+      "s": null,
+      "s s": "pane::SplitDown",
+      "s v": "pane::SplitRight",
+      "space d": "editor::GoToDiagnostic"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "space": null,
+      "cmd-enter": null,
+      "ctrl-a": "editor::MoveToBeginningOfLine",
+      "ctrl-e": "editor::MoveToEndOfLine",
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-shift-tab": "pane::ActivatePrevItem",
+      "cmd-t": "workspace::NewFile"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k j": "pane::SplitDown",
+      "cmd-enter": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-e": "project_panel::ToggleFocus",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"]
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "g": "editor::ScrollCursorBottom",
+      "a": "project_panel::NewFile",
+      "d": "project_panel::NewDirectory",
+      "x": "project_panel::Delete",
+      "y": "project_panel::Copy",
+      "y y": "project_panel::CopyPath",
+      "p": "project_panel::Paste",
+      "o": "project_panel::RevealInFinder",
+      "r": "project_panel::Rename",
+      "cmd-enter": "project_panel::OpenInTerminal",
+      "ctrl-enter": "project_panel::OpenInTerminal"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal",
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-shift-tab": "pane::ActivatePrevItem"
+    }
+  }
+]

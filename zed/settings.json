@@ -1,0 +1,39 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "theme": "Rosé Pine",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim": {
+    "use_system_clipboard": "on_yank",
+    "use_multiline_find": true
+  },
+  "terminal": {
+    "dock": "left",
+    "copy_on_select": true,
+    "env": {
+      "ZELLIJ": "1"
+    }
+  },
+  // "experimental.theme_overrides": {
+  //   "panel.focused_border": "#ff00ff",
+  //   "pane.focused_border": "#ff00ff"
+  // },
+  "use_multiline_find": true,
+  "relative_line_numbers": true,
+  "vim_mode": true,
+  "ui_font_size": 19,
+  "autosave": "on_window_change",
+  "show_whitespaces": "all",
+  "copy_on_select": true,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 16.5
+}

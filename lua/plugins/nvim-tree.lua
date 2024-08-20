@@ -17,6 +17,7 @@ return {
         },
         view = {
           width = 35,
+          adaptive_size = true,
         },
         renderer = {
           group_empty = true,
@@ -24,7 +25,6 @@ return {
         filters = {
           dotfiles = true,
         },
-        -- hijack_cursor = false,
       })
     end,
   },

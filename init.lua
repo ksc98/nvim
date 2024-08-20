@@ -6,10 +6,17 @@ require("lualine").setup({
     theme = "tokyonight",
   },
 
-  sections = { lualine_c = { require("auto-session.lib").current_session_name } },
+  -- sections = { lualine_c = { require("auto-session.lib").current_session_name } },
 })
 
-require("lspconfig").terraformls.setup({})
+-- require("lspconfig").terraformls.setup({})
+-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+--   pattern = { "*.tf", "*.tfvars" },
+--   callback = function()
+--     vim.lsp.buf.format()
+--   end,
+-- })
+-- require("lspconfig").terraformls.setup({})
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 --   pattern = { "*.tf", "*.tfvars" },
 --   callback = function()
@@ -17,12 +24,34 @@ require("lspconfig").terraformls.setup({})
 --   end,
 -- })
 
+require("lspconfig").terraformls.setup({})
 require("lspconfig").ruff_lsp.setup({})
 require("lspconfig").lua_ls.setup({})
+require("gitsigns").setup()
+
+-- load the session for the current directory
+vim.keymap.set("n", "<leader>qs", function()
+  require("persistence").load()
+end)
+
+-- select a session to load
+vim.keymap.set("n", "<leader>qS", function()
+  require("persistence").select()
+end)
+
+-- load the last session
+vim.keymap.set("n", "<leader>ql", function()
+  require("persistence").load({ last = true })
+end)
+
+-- stop Persistence => session won't be saved on exit
+vim.keymap.set("n", "<leader>qd", function()
+  require("persistence").stop()
+end)
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
-  vim.o.guifont = "JetBrains Mono:h17"
+  vim.o.guifont = "JetBrainsMono Nerd Font:h17"
   vim.g.neovide_scroll_animation_length = 0.1
   vim.g.neovide_cursor_animation_length = 0.06
   vim.g.neovide_cursor_trail_size = 0.03
@@ -46,6 +75,9 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_opacity = 200
   vim.g.neovide_cursor_vfx_particle_density = 200
   vim.g.neovide_cursor_vfx_particle_speed = 5
+  vim.defer_fn(function()
+    vim.cmd("NeovideFocus")
+  end, 25)
 
   -- vim.keymap.set("n", "<D-q>", "<leader>qq") -- Command Q -> <leader>qq
   -- vim.keymap.set("i", "<D-q>", "<leader>qq") -- Command Q -> <leader>qq
@@ -57,6 +89,9 @@ if vim.g.neovide then
   --   vim.cmd("NeovideFocus")
   -- end, 25)
 end
+
+vim.g.tmux_navigator_no_wrap = 1
+vim.g.tmux_navigator_save_on_switch = 2
 
 -- Allow clipboard copy paste in neovim
 vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })

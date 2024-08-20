@@ -16,6 +16,9 @@ keymap.set("n", "sv", "<cmd>vsplit<CR>", opts)
 keymap.set("n", "<leader><leader>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 keymap.set("v", "<leader><leader>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
+-- keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
+-- keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
+
 keymap.set("n", "=", "<C-w><")
 keymap.set("n", "-", "<C-w>>")
 
@@ -29,9 +32,16 @@ keymap.set("n", "<leader>t", "<cmd>NvimTreeFindFile<CR>")
 keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
 
 keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>")
-keymap.set("n", "<leader>fs", require("auto-session.session-lens").search_session, {
-  noremap = true,
-})
+
+-- keymap.set("n", "<C-Tab>", ":bnext<CR>", opts)
+-- keymap.set("n", "<C-S-Tab>", ":bprevious<CR>", opts)
+
+-- keymap.set("n", "<leader>fs", require("auto-session.session-lens").search_session, {
+--   noremap = true,
+-- })
+
+-- keymap.set("n", "p", "_dP", opts)
+-- keymap.set({ "v", "x" }, "p", "P", opts)
 
 keymap.set("n", "<leader>h", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())

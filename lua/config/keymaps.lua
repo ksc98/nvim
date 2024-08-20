@@ -32,8 +32,8 @@ keymap.del("i", "<A-j>")
 keymap.del("n", "<A-k>")
 keymap.del("i", "<A-k>")
 
-keymap.set("n", "p", "_dP", opts)
-keymap.set({ "v", "x" }, "p", "P", opts)
+-- keymap.set("n", "p", "_dP", opts)
+-- keymap.set({ "v", "x" }, "p", "P", opts)
 
 keymap.set("n", "<leader>h", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())

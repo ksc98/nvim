@@ -5,18 +5,14 @@ return {
     neoscroll.setup({
       mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
       -- performance_mode = true,
-      -- easing = "circular",
-      easing = "sine",
+      easing = "linear",
     })
     local keymap = {
-      -- Use the "sine" easing function
       ["<C-u>"] = function()
-        neoscroll.ctrl_u({ duration = 230 })
-        -- neoscroll.zz({ half_win_duration = 250 })
+        neoscroll.ctrl_u({ duration = 235 })
       end,
       ["<C-d>"] = function()
-        neoscroll.ctrl_d({ duration = 230 })
-        -- neoscroll.zz({ half_win_duration = 250 })
+        neoscroll.ctrl_d({ duration = 235 })
       end,
       -- When no value is passed the `easing` option supplied in `setup()` is used
       ["<C-y>"] = function()

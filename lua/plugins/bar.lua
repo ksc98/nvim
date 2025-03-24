@@ -1,15 +1,12 @@
 return {
   "nvim-zh/colorful-winsep.nvim",
-  config = true,
-  event = { "WinNew" },
-  -- hi = {
-  --   fg = "#00FF00",
-  --   bg = "#00FF00",
-  -- },
-  hi = {
-    bg = "#16161E",
-    fg = "#1F3442",
-  },
+  event = { "WinLeave" },
+  config = function()
+    require("colorful-winsep").setup({
+      smooth = true,
+      exponential_smoothing = true,
+    })
+  end,
 }
 -- return {
 --   "nvim-zh/colorful-winsep.nvim",

@@ -11,3 +11,8 @@ vim.opt.laststatus = 3
 -- vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ff0000" })
 
 vim.opt.scrolloff = 11
+
+-- vim.opt.tabstop = 2
+-- vim.opt.expandtab = true
+-- vim.opt.softtabstop = 2
+-- vim.opt.shiftwidth = 2

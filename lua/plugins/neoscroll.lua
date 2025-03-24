@@ -9,10 +9,10 @@ return {
     })
     local keymap = {
       ["<C-u>"] = function()
-        neoscroll.ctrl_u({ duration = 235 })
+        neoscroll.ctrl_u({ duration = 200 })
       end,
       ["<C-d>"] = function()
-        neoscroll.ctrl_d({ duration = 235 })
+        neoscroll.ctrl_d({ duration = 200 })
       end,
       -- When no value is passed the `easing` option supplied in `setup()` is used
       ["<C-y>"] = function()

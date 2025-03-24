@@ -15,6 +15,11 @@ return {
         sort = {
           sorter = "case_sensitive",
         },
+        actions = {
+          -- open_file = {
+          --   quit_on_open = true,
+          -- },
+        },
         view = {
           width = 35,
           adaptive_size = true,

@@ -5,29 +5,17 @@ require("lualine").setup({
   options = {
     theme = "tokyonight",
   },
-
-  -- sections = { lualine_c = { require("auto-session.lib").current_session_name } },
 })
 
--- require("lspconfig").terraformls.setup({})
--- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
---   pattern = { "*.tf", "*.tfvars" },
---   callback = function()
---     vim.lsp.buf.format()
---   end,
--- })
--- require("lspconfig").terraformls.setup({})
--- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
---   pattern = { "*.tf", "*.tfvars" },
---   callback = function()
---     vim.lsp.buf.format()
---   end,
--- })
+require("mini.files").setup()
 
-require("lspconfig").terraformls.setup({})
-require("lspconfig").ruff_lsp.setup({})
-require("lspconfig").lua_ls.setup({})
-require("gitsigns").setup()
+-- require("lspconfig").terraformls.setup({})
+-- require("lspconfig").ruff.setup({})
+-- require("lspconfig").lua_ls.setup({})
+-- require("gitsigns").setup()
+-- require("copilot").setup({
+--   -- use recommended settings from above
+-- })
 
 -- load the session for the current directory
 vim.keymap.set("n", "<leader>qs", function()
@@ -92,9 +80,3 @@ end
 
 vim.g.tmux_navigator_no_wrap = 1
 vim.g.tmux_navigator_save_on_switch = 2
-
--- Allow clipboard copy paste in neovim
-vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })

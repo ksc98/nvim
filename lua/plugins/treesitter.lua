@@ -22,6 +22,7 @@ return {
         },
       },
       ensure_installed = {
+        "just",
         "json",
         "kdl",
         "astro",

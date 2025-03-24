@@ -18,8 +18,11 @@ keymap.set("v", "<leader><leader>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
 keymap.set("i", "<M-BS>", "<C-W>", opts)
 
-keymap.set("n", "=", "<C-w><")
-keymap.set("n", "-", "<C-w>>")
+keymap.set("i", "<C-E>", "<End>", opts)
+keymap.set("i", "<C-A>", "<Home>", opts)
+
+-- keymap.set("n", "=", "<C-w><")
+-- keymap.set("n", "-", "<C-w>>")
 
 keymap.set("n", "<leader>t", "<cmd>NvimTreeFindFile<CR>")
 keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
@@ -31,6 +34,12 @@ keymap.del("i", "<A-j>")
 
 keymap.del("n", "<A-k>")
 keymap.del("i", "<A-k>")
+
+-- Allow clipboard copy paste in neovim
+vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 
 -- keymap.set("n", "p", "_dP", opts)
 -- keymap.set({ "v", "x" }, "p", "P", opts)

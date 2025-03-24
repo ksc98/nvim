@@ -33,6 +33,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+    { import = "lazyvim.plugins.extras.editor.mini-files" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -47,12 +48,12 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = false }, -- automatically check for plugin updates
+  checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     cache = {
       enabled = true,
       -- disable_events = {},
-      reset_packpath = true,
+      -- reset_packpath = true,
     },
     rtp = {
       -- disable some rtp plugins
@@ -60,7 +61,7 @@ require("lazy").setup({
         "gzip",
         -- "matchit",
         -- "matchparen",
-        "netrwPlugin",
+        -- "netrwPlugin",
         -- "rplugin",
         "tarPlugin",
         "tohtml",
